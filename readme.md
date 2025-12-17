@@ -24,7 +24,7 @@ A lightweight ROS 2 package for real-time 2D occupancy mapping using the Bonxai 
 # Clone this repository
 mkdir -p ~/plan_env_ws/src
 cd ~/plan_env_ws/src
-git clone <repository-url> plan_env
+git clone <repository-url> plan_env_bonxai
 
 # Build
 cd ~/plan_env_ws
@@ -63,21 +63,14 @@ ros2 launch plan_env occupancy_mapping.launch.py
 | `prob_hit` | 0.7 | Probability update for hits |
 | `prob_miss` | 0.4 | Probability update for misses |
 
-## Architecture Overview
-
-### Core Components
-1. **OccupancyMap**: Bonxai-based sparse voxel grid with probability updates
-2. **BonxaiRosConverter**: Data conversion between ROS and Bonxai formats
-3. **OccupancyMapNode**: ROS 2 node with sensor data processing
-
 ## File Structure
 ```
-plan_env/
+plan_env_bonxai/
 ├── CMakeLists.txt
 ├── include/
 │   ├── bonxai_core/          # Bonxai library headers
 │   ├── bonxai_map/           # Core mapping classes
-│   └── plan_env/             # ROS integration
+│   └── plan_env_bonxai/      # ROS integration
 ├── launch/
 │   └── occupancy_mapping.launch.py
 ├── package.xml
@@ -89,12 +82,9 @@ plan_env/
 
 ## License
 
-Apache License 2.0 - See [LICENSE](LICENSE) file for details.
+MIT License
 
 ## Acknowledgments
 
-- [Bonxai Library](https://github.com/felipe-tovar-henao/Bonxai) for sparse voxel grid
+- [Bonxai Library](https://github.com/facontidavide/Bonxai) for sparse voxel grid
 - ROS 2 community for the robotics framework
-
-
-
